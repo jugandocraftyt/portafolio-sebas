@@ -1,0 +1,91 @@
+:root {
+    --primary: #0051ff;
+    --bg-light: #eef2f7;
+    --bg-dark: #0d1117;
+    --text-light: #0d0d0d;
+    --text-dark: #ffffff;
+    --card-light: #ffffff;
+    --card-dark: #161b22;
+    --shadow: rgba(0,0,0,0.15);
+    --radius: 12px;
+    --speed: .25s;
+}
+
+/* DARK MODE AUTO */
+@media (prefers-color-scheme: dark) {
+    body { background: var(--bg-dark); color: var(--text-dark); }
+    .card { background: var(--card-dark); }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg-light);
+    margin: 0;
+    padding: 0;
+    color: var(--text-light);
+    transition: background var(--speed), color var(--speed);
+}
+
+.container { width: 90%; max-width: 800px; margin: auto; }
+
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--primary);
+    color: white;
+    border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+    margin-bottom: 10px;
+    transition: transform .3s;
+}
+.avatar:hover { transform: scale(1.05); }
+
+.name { font-size: 28px; margin: 10px 0 5px; font-weight: bold; }
+.role { opacity: .9; }
+
+.card {
+    background: var(--card-light);
+    border-radius: var(--radius);
+    padding: 18px;
+    margin: 20px 0;
+    box-shadow: 0 3px 10px var(--shadow);
+    transition: transform var(--speed), box-shadow var(--speed);
+}
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px var(--shadow);
+}
+
+.card ul { padding-left: 18px; }
+
+.center { text-align: center; }
+
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 12px 20px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background var(--speed), transform var(--speed);
+}
+.btn:hover {
+    background: #0038b8;
+    transform: scale(1.05);
+}
+
+.footer {
+    text-align: center;
+    padding: 15px;
+    color: gray;
+    margin-top: 40px;
+    font-size: 14px;
+}
